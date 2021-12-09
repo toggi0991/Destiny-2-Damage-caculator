@@ -5,11 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        select[option]{
+            width: 30px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <div style="margin: 5%;">
         <div>
-            <input type="text" id="body damage">
+            <p style="display: inline-block; margin: 0px 5px 0px 0px;">무기</p>
+            
+            <select style="margin: 0px 20px 0px 0px;">
+                <option>자동 소총</option>
+                <option>핸드 캐논</option>
+            </select>
+
+            <p style="display: inline-block; margin: 0px 5px 0px 0px;">무기 프레임</p>
+
+            <select>
+                <option selected>고위력 프레임</option>
+                <option>속사 프레임</option>
+                <option>적응형 프레임</option>
+                <option>정밀 프레임</option>
+            </select>
         </div>
     </div>
 </body>
