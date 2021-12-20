@@ -25,6 +25,14 @@
         }
         .buff, .debuff{
             display: inline-block;
+            padding: auto;
+        }
+        .buff-select, .debuff-select{
+            display: inline-block;
+        }
+        .effect-select{
+            display: block;
+            width: 80px;
         }
     </style>
 </head>
@@ -61,23 +69,27 @@
         </div>
         <div>
             <div class="buff">
-                <p style="display: inline-block;">버프</p>
-                <div class="select">
-                    <select>
-                        <option>빛의 샘</option>
-                    </select>
-                    <br>
-                    <select>
-                        <option>빛의 샘</option>
-                    </select>
-                </div>
+                <p class="p">버프</p>
+                    <div class="buff-select" style="position: relative;">
+                        <select class="effect-select" class="buff-select">
+                            <option>빛의 샘</option>
+                        </select>
+                        <select class="effect-select" style="position: absolute; top: 20px;">
+                            <option>빛의 무기</option>
+                        </select>
+                        <select class="effect-select" style="position: absolute; top: 40px;">
+                            <option>빛의 샘</option>
+                        </select>
+                    </div>
                 <input type="button" value="+" style="margin: 0px 30px 0px 0px;" onclick="add_buff()">
             </div>
             <div class="debuff">
                 <p class="p">디버프</p>
-                <select>
-                    <option>트랙터 대포</option>
-                </select>
+                    <div class="debuff-select">
+                        <select>
+                            <option>트랙터 대포</option>
+                        </select>
+                    </div>
                 <input type="button" value="+" onclick="add_debuff()">
             </div>
         </div>
