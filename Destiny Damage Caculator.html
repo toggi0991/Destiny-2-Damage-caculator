@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Destiny Damage Caculator.js"></script>
     <title>Document</title>
     <style>
         .weapon select{
@@ -33,7 +34,7 @@
         }
         .effect-select{
             display: block;
-            width: 80px;
+            width: 95px;
         }
     </style>
 </head>
@@ -71,14 +72,8 @@
         <div>
             <div class="buff">
                 <p class="p">버프</p>
-                    <div class="buff-select" style="position: relative;">
+                    <div id="buff-select-container" class="buff-select" style="position: relative;">
                         <select class="effect-select" class="buff-select">
-                            <option>빛의 샘</option>
-                        </select>
-                        <select class="effect-select" style="position: absolute; top: 20px;">
-                            <option>빛의 무기</option>
-                        </select>
-                        <select class="effect-select" style="position: absolute; top: 40px;">
                             <option>빛의 샘</option>
                         </select>
                     </div>
@@ -86,8 +81,8 @@
             </div>
             <div class="debuff">
                 <p class="p">디버프</p>
-                    <div class="debuff-select">
-                        <select>
+                    <div id="debuff-select-container" class="debuff-select" style="position: relative;">
+                        <select class="effect-select" class="debuff-select">
                             <option>트랙터 대포</option>
                         </select>
                     </div>
