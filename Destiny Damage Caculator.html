@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Destiny Damage Caculator.js"></script>
-    <title>Document</title>
+    <script src="ammo_type_select.js"></script>
+    <title>데스티니 2 데미지 계산기</title>
     <style>
-        .weapon select{
+        .weapon select, .ammo select{
             display: inline-block;
         }
         .p{
@@ -41,17 +42,27 @@
 <body>
     <div style="margin: 5%;">
         <div>
+            <div class="ammo select">
+                <p class="p">탄약 종류</p>
+
+                <select id="ammo_type" class="select" onchange="ammo_select(this.id)">
+                    <option selected value="primary">주 무기</option>
+                    <option value="special">특수 화기</option>
+                    <option value="heavy">중화기</option>
+                </select>
+            </div>
+
             <div class="weapon select">
                 <p class="p">무기</p>
                 
-                <select class="select">
-                    <option selected>자동 소총</option>
-                    <option>정찰 소총</option>
-                    <option>파동 소총</option>
-                    <option>핸드 캐논</option>
-                    <option>기관단총</option>
-                    <option>보조 무기</option>
-                    <option>활</option>
+                <select id="weapon select" class="select">
+                    <option selected value="auto-rifles">자동 소총</option>
+                    <option value="scout-rifles">정찰 소총</option>
+                    <option value="pulse-rifles">파동 소총</option>
+                    <option value="hand-cannons">핸드 캐논</option>
+                    <option value="submachine-guns">기관단총</option>
+                    <option value="sidearms">보조 무기</option>
+                    <option value="bows">활</option>
                 </select>
             </div>
             <div class="weapon select">
