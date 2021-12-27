@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Destiny Damage Caculator.js"></script>
     <script src="ammo_type_select.js"></script>
+    <script src="primary_weapon_frame.js"></script>
     <title>데스티니 2 데미지 계산기</title>
     <style>
+        body{
+            font-size: 16px;
+        }
         .weapon select, .ammo select{
             display: inline-block;
         }
@@ -55,7 +59,7 @@
             <div class="weapon select">
                 <p class="p">무기</p>
                 
-                <select id="weapon select" class="select">
+                <select id="weapon select" class="select" onchange="frame_select(this.id)">
                     <option selected value="auto-rifles">자동 소총</option>
                     <option value="scout-rifles">정찰 소총</option>
                     <option value="pulse-rifles">파동 소총</option>
@@ -68,11 +72,12 @@
             <div class="weapon select">
                 <p class="p">무기 프레임</p>
 
-                <select class="select">
-                    <option selected>고위력 프레임</option>
-                    <option>속사 프레임</option>
-                    <option>적응형 프레임</option>
-                    <option>정밀 프레임</option>
+                <select class="select" id="weapon frame">
+                    <option value="adaptive" selected>적응형 프레임</option>
+                    <option value="high-impact">고위력 프레임</option>
+                    <option value="precision">정밀 프레임</option>
+                    <option value="rapid-fire">속사 프레임</option>
+                    <option value="lightweight">경량 프레임</option>
                 </select>
             </div>
             <div class="weapon select">
