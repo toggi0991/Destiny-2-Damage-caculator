@@ -1,9 +1,13 @@
 let Add_Buff_top_Distance_length = 0;
+let Add_Buff_height_length = 20;
 
 function add_buff(){
     
     Add_Buff_top_Distance_length = Add_Buff_top_Distance_length + 20;
+    Add_Buff_height_length = Add_Buff_height_length + 20;
 
+    // 버프창 칸 높이 [Add_Buff_height_length] px; 만큼 추가
+    document.getElementById("buff").style.height=Add_Buff_height_length + "px";
     // select 만듦
     const select = document.createElement('select');
     // select class="effect-select"; style="position: absolute; top: [Add_Buff_top_Distance_length] px;" 추가
@@ -39,17 +43,21 @@ function add_buff(){
 
 
 
-let Add_deBuff_Distance_length = 0;
+let Add_deBuff_top_Distance_length = 0;
+let Add_deBuff_height_length = 20;
 
 function add_debuff(){
     
-    Add_deBuff_Distance_length = Add_deBuff_Distance_length + 20;
+    Add_deBuff_top_Distance_length = Add_deBuff_top_Distance_length + 20;
+    Add_deBuff_height_length = Add_deBuff_height_length + 20;
 
+    // 버프창 칸 높이 [Add_deBuff_height_length] px; 만큼 추가
+    document.getElementById("debuff").style.height = Add_deBuff_height_length + "px";
     // select 만듦
     const select = document.createElement('select');
     // select class="effect-select"; style="position: absolute; top: [Add_deBuff_top_Distance_length] px;" 추가
     select.setAttribute("class", "effect-select");
-    select.setAttribute("style", "position: absolute; top: " + Add_deBuff_Distance_length + "px;");
+    select.setAttribute("style", "position: absolute; top: " + Add_deBuff_top_Distance_length + "px;");
 
 
     // 각종 버프 이름 적힌 option 추가 

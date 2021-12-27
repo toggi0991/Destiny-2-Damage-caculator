@@ -32,10 +32,11 @@
         .buff, .debuff{
             display: inline-block;
             padding: auto;
+            height: 20px;
         }
         .buff-select, .debuff-select{
             display: inline-block;
-            height: 60px;
+            height: 0px;
         }
         .effect-select{
             display: block;
@@ -86,7 +87,7 @@
             </div>
         </div>
         <div>
-            <div class="buff">
+            <div id="buff" class="buff">
                 <p class="p">버프</p>
                     <div id="buff-select-container" class="buff-select" style="position: relative;">
                         <select class="effect-select" class="buff-select">
@@ -95,7 +96,7 @@
                     </div>
                 <input type="button" value="+" style="margin: 0px 30px 0px 0px;" onclick="add_buff()">
             </div>
-            <div class="debuff">
+            <div id="debuff" class="debuff">
                 <p class="p">디버프</p>
                     <div id="debuff-select-container" class="debuff-select" style="position: relative;">
                         <select class="effect-select" class="debuff-select">
