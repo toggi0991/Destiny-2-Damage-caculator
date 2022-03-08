@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Destiny Damage Caculator.js"></script>
+    <script src="ammo_type_select.js"></script>
+    <script src="primary_weapon_frame.js"></script>
+    <title>데스티니 2 데미지 계산기</title>
+    <style>
+        body{
+            font-size: 16px;
+        }
+        .weapon select, .ammo select{
+            display: inline-block;
+        }
+        .p{
+            display: inline-block;
+            margin: 0px 5px 0px 0px;
+        }
+        .damage{
+            display: inline-block;
+        }
+        .select{
+            margin: 0px 20px 0px 0px;
+            display: inline-block;
+        }
+        option{
+            text-align: center;
+        }
+        .buff, .debuff{
+            display: inline-block;
+            padding: auto;
+            height: 20px;
+        }
+        .buff-select, .debuff-select{
+            display: inline-block;
+            height: 0px;
+        }
+        .effect-select{
+            display: block;
+            width: 95px;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 5%;">
+        <div>
+            <div class="ammo select">
+                <p class="p">탄약 종류</p>
+
+                <select id="ammo_type" class="select" onchange="ammo_select(this.id)">
+                    <option selected value="primary">주 무기</option>
+                    <option value="special">특수 화기</option>
+                    <option value="heavy">중화기</option>
+                </select>
+            </div>
+
+            <div class="weapon select">
+                <p class="p">무기</p>
+                
+                <select id="weapon select" class="select" onchange="frame_select(this.id)">
+                    <option selected value="auto-rifles">자동 소총</option>
+                    <option value="scout-rifles">정찰 소총</option>
+                    <option value="pulse-rifles">파동 소총</option>
+                    <option value="hand-cannons">핸드 캐논</option>
+                    <option value="submachine-guns">기관단총</option>
+                    <option value="sidearms">보조 무기</option>
+                    <option value="bows">활</option>
+                </select>
+            </div>
+            <div class="weapon select">
+                <p class="p">무기 프레임</p>
+
+                <select class="select" id="weapon frame">
+                    <option value="adaptive" selected>적응형 프레임</option>
+                    <option value="high-impact">고위력 프레임</option>
+                    <option value="precision">정밀 프레임</option>
+                    <option value="rapid-fire">속사 프레임</option>
+                    <option value="lightweight">경량 프레임</option>
+                </select>
+            </div>
+            <div class="weapon select">
+                <input type="checkbox" id="precision" > <p class="damage">정밀 피해</p>
+                <input type="checkbox" id="precision" > <p class="damage">마녀</p>
+            </div>
+        </div>
+        <div>
+            <div id="buff" class="buff">
+                <p class="p">버프</p>
+                    <div id="buff-select-container" class="buff-select" style="position: relative;">
+                        <select class="effect-select" class="buff-select">
+                            <option>빛의 샘</option>
+                        </select>
+                    </div>
+                <input type="button" value="+" style="margin: 0px 30px 0px 0px;" onclick="add_buff()">
+            </div>
+            <div id="debuff" class="debuff">
+                <p class="p">디버프</p>
+                    <div id="debuff-select-container" class="debuff-select" style="position: relative;">
+                        <select class="effect-select" class="debuff-select">
+                            <option>트랙터 대포</option>
+                        </select>
+                    </div>
+                <input type="button" value="+" onclick="add_debuff()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
