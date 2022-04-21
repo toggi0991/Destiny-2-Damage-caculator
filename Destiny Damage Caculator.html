@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="Destiny Damage Caculator.js"></script>
-    <script src="ammo_type_select.js"></script>
-    <script src="primary_weapon_frame.js"></script>
+    <!-- <script type="module"> import {add_buff, add_debuff} from './buff_debuff_add.js';</script> -->
     <title>데스티니 2 데미지 계산기</title>
     <style>
         body{
@@ -29,7 +27,7 @@
         option{
             text-align: center;
         }
-        .buff, .debuff{
+        .buff_container, .debuff_container{
             display: inline-block;
             padding: auto;
             height: 20px;
@@ -87,25 +85,44 @@
             </div>
         </div>
         <div>
-            <div id="buff" class="buff">
+            <div id="buff_container" class="buff_container">
                 <p class="p">버프</p>
                     <div id="buff-select-container" class="buff-select" style="position: relative;">
-                        <select class="effect-select" class="buff-select">
-                            <option>빛의 샘</option>
+                        <select id="buff_0" class="effect-select" class="buff-select">
+                            <option value="WoR">빛의 샘</option>
+                            <option value="WoL">빛의 무기</option>
                         </select>
                     </div>
-                <input type="button" value="+" style="margin: 0px 30px 0px 0px;" onclick="add_buff()">
+                <!-- <input type="button" value="+" style="margin: 0px 30px 0px 0px;" onclick="add_buff()"> -->
+                <input type="button" value="+" style="margin: 0px 30px 0px 0px;" id="buff_input">
             </div>
-            <div id="debuff" class="debuff">
+            <div id="debuff_container" class="debuff_container">
                 <p class="p">디버프</p>
                     <div id="debuff-select-container" class="debuff-select" style="position: relative;">
-                        <select class="effect-select" class="debuff-select">
-                            <option>트랙터 대포</option>
+                        <select id="debuff_0" class="effect-select" class="debuff-select">
+                            <option value="tractor">트랙터 대포</option>
+                            <option value="divinity">신성</option>
                         </select>
                     </div>
-                <input type="button" value="+" onclick="add_debuff()">
+                <!-- <input type="button" value="+" onclick="add_debuff()"> -->
+                <input type="button" value="+" id="debuff_input">
             </div>
         </div>
     </div>
+
+
+    <script type="module" src="Destiny Damage Caculator.js"></script>
+    <script src="weapon_type_select/ammo_type_select.js"></script>
+    <script src="weapon_type_select/primary_weapon_frame.js"></script>
+    <script src="weapon_type_select/special_weapon_frame.js"></script>
+    <script src="weapon_type_select/heavy_weapon_frame.js"></script>
+    <script type="module" src="buff_debuff_add.js"></script>
+    <script src="destiny2_api_get.js"></script>
+    <script type="module">
+        import {add_buff, add_debuff} from "./buff_debuff_add.js"
+
+        document.querySelector("#buff_input").addEventListener("click", add_buff);
+        document.querySelector("#debuff_input").addEventListener("click", add_debuff);
+    </script>
 </body>
 </html>
