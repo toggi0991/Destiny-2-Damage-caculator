@@ -1,6 +1,8 @@
 function ammo_select(ammo_types){
     const AmmoTypes = document.getElementById(ammo_types);
     const Weapon_Select = document.getElementById("weapon select");
+
+    //흰탄
     if(AmmoTypes.options[AmmoTypes.selectedIndex].value === "primary"){
         
         //모든 자식 요소 제거
@@ -18,11 +20,11 @@ function ammo_select(ammo_types){
         const bow = document.createElement('option');
 
         //무기별로 value 삽입
-        auto.setAttribute("value","auto-rifles");
-        scout.setAttribute("value","scout-rifles");
-        pulse.setAttribute("value","pulse-rifles");
-        handcannon.setAttribute("value","hand-cannons");
-        smg.setAttribute("value","submachine-guns");
+        auto.setAttribute("value","auto_rifles");
+        scout.setAttribute("value","scout_rifles");
+        pulse.setAttribute("value","pulse_rifles");
+        handcannon.setAttribute("value","hand_cannons");
+        smg.setAttribute("value","submachine_guns");
         sidearm.setAttribute("value","sidearms");
         bow.setAttribute("value","bows");
 
@@ -46,17 +48,18 @@ function ammo_select(ammo_types){
 
 
 
-        // <option value="auto-rifles">자동 소총</option>
-        // <option value="scout-rifles">정찰 소총</option>
-        // <option value="pulse-rifles">파동 소총</option>
-        // <option value="hand-cannons">핸드 캐논</option>
-        // <option value="submachine-gun">기관단총</option>
+        // <option value="auto_rifles">자동 소총</option>
+        // <option value="scout_rifles">정찰 소총</option>
+        // <option value="pulse_rifles">파동 소총</option>
+        // <option value="hand_cannons">핸드 캐논</option>
+        // <option value="submachine_gun">기관단총</option>
         // <option value="sidearms">보조 무기</option>
         // <option value="bow">활</option>
     }
 
 
     
+    //특탄
     if(AmmoTypes.options[AmmoTypes.selectedIndex].value === "special"){
         
         //모든 자식 요소 제거
@@ -70,13 +73,15 @@ function ammo_select(ammo_types){
         const fusion = document.createElement('option');
         const sniper = document.createElement('option');
         const trace = document.createElement('option');
+        const glaive = document.createElement('option');
 
         //무기별로 value 삽입
-        shotgun.setAttribute("value","shot-guns");
-        grenade.setAttribute("value","grenade-launchers");
-        fusion.setAttribute("value","fusion-rifles");
-        sniper.setAttribute("value","sniper-rifles");
-        trace.setAttribute("value","trace-rifles");
+        shotgun.setAttribute("value","shot_guns");
+        grenade.setAttribute("value","special_grenade_launchers");
+        fusion.setAttribute("value","fusion_rifles");
+        sniper.setAttribute("value","sniper_rifles");
+        trace.setAttribute("value","trace_rifles");
+        glaive.setAttribute("value","glaive");
 
         //무기별로 innerHTML 삽입
         shotgun.innerHTML = "산탄총";
@@ -84,6 +89,7 @@ function ammo_select(ammo_types){
         fusion.innerHTML = "융합 소총";
         sniper.innerHTML = "저격총";
         trace.innerHTML = "추적 소총";
+        glaive.innerHTML = "월도";
 
         //무기 option id="weapon select" 자녀로 삽입
         Weapon_Select.appendChild(shotgun);
@@ -91,16 +97,18 @@ function ammo_select(ammo_types){
         Weapon_Select.appendChild(fusion);
         Weapon_Select.appendChild(sniper);
         Weapon_Select.appendChild(trace);
+        Weapon_Select.appendChild(glaive);
 
 
-        // <option selected value="shot-guns">산탄총</option>
-        // <option value="grenade-launchers">유탄 발사기</option>
-        // <option value="fusion-rifles">융합 소총</option>
-        // <option value="sniper-rifles">저격총</option>
-        // <option value="trace-rifles">추적 소총</option>
+        // <option selected value="shot_guns">산탄총</option>
+        // <option value="grenade_launchers">유탄 발사기</option>
+        // <option value="fusion_rifles">융합 소총</option>
+        // <option value="sniper_rifles">저격총</option>
+        // <option value="trace_rifles">추적 소총</option>
     }
 
 
+    //중탄
     if(AmmoTypes.options[AmmoTypes.selectedIndex].value === "heavy"){
         
         //모든 자식 요소 제거
@@ -117,10 +125,10 @@ function ammo_select(ammo_types){
 
         //무기별로 value 삽입
         sword.setAttribute("value","swords");
-        grenade.setAttribute("value","grenade-launchers");
-        rocket.setAttribute("value","rochet-launchers");
-        linear.setAttribute("value","linear-fusion-rifles");
-        machine.setAttribute("value","machine-guns");
+        grenade.setAttribute("value","heavy_grenade_launchers");
+        rocket.setAttribute("value","rochet_launchers");
+        linear.setAttribute("value","linear_fusion_rifles");
+        machine.setAttribute("value","machine_guns");
 
         //무기별로 innerHTML 삽입
         sword.innerHTML = "검";
@@ -139,10 +147,10 @@ function ammo_select(ammo_types){
 
 
         // <option value="swords">검</option>
-        // <option value="grenade-launchers">유탄 발사기</option>
-        // <option value="rochet-launchers">로켓 발사기</option>
-        // <option value="linear-fusion-rifles">선형 융합 소총</option>
-        // <option value="machine-guns">기관총</option>
+        // <option value="grenade_launchers">유탄 발사기</option>
+        // <option value="rochet_launchers">로켓 발사기</option>
+        // <option value="linear_fusion_rifles">선형 융합 소총</option>
+        // <option value="machine_guns">기관총</option>
     }
 
 

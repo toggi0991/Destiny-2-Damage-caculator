@@ -8,7 +8,8 @@ xhr.onreadystatechange = function(){
     if(this.readyState === 4 && this.status === 200){
         var json = JSON.parse(this.responseText);
         console.log(json.Response.data.inventoryItem.itemName);
+        console.log("sucess if");
     }else{
-        print("not if");
+        console.log("not if");
     }
 }

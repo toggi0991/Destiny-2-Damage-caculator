@@ -26,4 +26,4 @@ console.log("debuff_number = " + debuff_number);
 //     buff_container_number += 1;
 // }
 
-// 다시 정리해서 모듈화 해야함
+// 다시 정리해서 모듈화 해야함  (성공함)
