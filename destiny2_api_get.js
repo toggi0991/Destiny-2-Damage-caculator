@@ -1,4 +1,4 @@
-var apikey = "ff2dfdcb8d5c4ee2b5c0f9f1fb5d2a9e";
+var apikey = "";
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://www.bungie.net/platform/Destiny/Manifest/InventoryItem/1274330687/", true);
